@@ -1,0 +1,4 @@
+
+github - install
+
+devtools::install_github("mk-oh/catforecast2", args = c("--no-multiarch"))

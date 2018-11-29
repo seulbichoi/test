@@ -1,0 +1,18 @@
+tmp <- sell_in_total %>% filter(prod_cd == 111171155, ymd > "2018-07-01") 
+
+tmp_cd = 111073575
+sell_in_total %>% filter(prod_cd == 111071155) %>% ggplot() + geom_line(aes(x=ymd, y=sell_in_cnt)) +
+  facet_zoom(x = ymd %in% tmp$ymd, zoom.size=1.2) + theme(panel.border = element_rect(fill = NA, colour = "grey10"),
+                                                          panel.background = element_blank(),
+                                                          panel.grid.minor = element_line(colour = "grey85"),
+                                                          panel.grid.major = element_line(colour = "grey85"),
+                                                          panel.grid.major.x = element_line(colour = "grey85"),
+                                                          axis.text = element_text(size = 13, face = "bold"),
+                                                          axis.title = element_text(size = 15, face = "bold"),
+                                                          plot.title = element_text(size = 16, face = "bold"),
+                                                          strip.text = element_text(size = 16, face = "bold"),
+                                                          strip.background = element_rect(colour = "black"),
+                                                          legend.text = element_text(size = 15),
+                                                          legend.title = element_text(size = 16, face = "bold"),
+                                                          legend.background = element_rect(fill = "white"),
+                                                          legend.key = element_rect(fill = "white"))
